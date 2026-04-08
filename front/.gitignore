@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-ssr/
+build/
+*.local
+
+# Si usas Vite o similares
+.eslintcache
+
+# NO IGNORAR .ENV
+!*.env
