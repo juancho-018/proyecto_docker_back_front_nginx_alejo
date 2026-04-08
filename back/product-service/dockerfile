@@ -1,0 +1,13 @@
+# Stage 1: Build dependencies
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+
+# Stage 2: Runtime
+FROM node:18-alpine
+WORKDIR /app
+COPY --from=build /app .
+EXPOSE 4042
+CMD ["npm", "start"]
