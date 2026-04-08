@@ -37,7 +37,7 @@ Este comando monta el script `init-db.sql` para crear las bases de datos `shoes_
 
 **PowerShell (Sustituye por tu ruta completa si es necesario):**
 ```powershell
-docker run -d --name db-container --network red-back-db -p 5432:5432 -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=postgres -v pg-data-shoes:/var/lib/postgresql/data -v "${PWD}/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql" postgres:16-alpine
+docker run -d --name db-container --network red-back-db -p 5432:5432 -e POSTGRES_PASSWORD=admin -e POSTGRES_DB=postgres -v pg-data-shoes:/var/lib/postgresql/data -v "${PWD}/back/gateway/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql" postgres:16-alpine
 ```
 
 ### 4. Construcción y Ejecución del Backend
